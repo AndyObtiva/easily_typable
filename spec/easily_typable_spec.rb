@@ -1,9 +1,7 @@
-require 'rubygems'
-require 'spec'
-require File.dirname(__FILE__) + '/../lib/easily_typable'
+require_relative '../lib/easily_typable'
 
 class TypeA
-  include Obtiva::EasilyTypable
+  include EasilyTypable
 end
 
 class TypeB < TypeA
@@ -12,23 +10,23 @@ end
 class TypeC < TypeB
 end
 
-describe "Obtiva::EasilyTypable" do
+describe EasilyTypable do
   it "should add type_a? method to TypeA object" do
-    TypeA.new.type_a?.should be_true
+    expect(TypeA.new.type_a?).to be_truthy
   end
   it "should add type_b? method to TypeB object" do
-    TypeB.new.type_b?.should be_true
+    expect(TypeB.new.type_b?).to be_truthy
   end
   it "should add type_b? method to TypeA object" do
-    TypeA.new.type_b?.should be_false
+    expect(TypeA.new.type_b?).to be_falsey
   end
   it "should add type_c? method to TypeC object" do
-    TypeC.new.type_c?.should be_true
+    expect(TypeC.new.type_c?).to be_truthy
   end
   it "should add type_c? method to TypeA object" do
-    TypeA.new.type_c?.should be_false
+    expect(TypeA.new.type_c?).to be_falsey
   end
   it "should add type_c? method to TypeB object" do
-    TypeB.new.type_c?.should be_false
+    expect(TypeB.new.type_c?).to be_falsey
   end
 end
