@@ -81,8 +81,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codeclimate-test-reporter (> 0)
-  coveralls (> 0)
+  codeclimate-test-reporter (~> 1.0.5)
+  coveralls (~> 0.8.19)
   jeweler (~> 2.0.1)
   nokogiri (~> 1.6.8.1)
   rack (~> 1.6.5)
