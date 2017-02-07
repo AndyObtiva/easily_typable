@@ -30,8 +30,8 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
-      s.add_development_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
+      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.3.3"])
+      s.add_development_dependency(%q<rdoc>.freeze, ["~> 5.0.0"])
       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
       s.add_development_dependency(%q<rake>.freeze, ["~> 10.4.2"])
       s.add_development_dependency(%q<rack>.freeze, ["~> 1.6.5"])
@@ -39,8 +39,8 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<tins>.freeze, ["~> 1.6.0"])
       s.add_development_dependency(%q<term-ansicolor>.freeze, ["~> 1.3.2"])
     else
-      s.add_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
-      s.add_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
+      s.add_dependency(%q<jeweler>.freeze, ["~> 2.3.3"])
+      s.add_dependency(%q<rdoc>.freeze, ["~> 5.0.0"])
       s.add_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
       s.add_dependency(%q<rake>.freeze, ["~> 10.4.2"])
       s.add_dependency(%q<rack>.freeze, ["~> 1.6.5"])
@@ -49,8 +49,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<term-ansicolor>.freeze, ["~> 1.3.2"])
     end
   else
-    s.add_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
-    s.add_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
+    s.add_dependency(%q<jeweler>.freeze, ["~> 2.3.3"])
+    s.add_dependency(%q<rdoc>.freeze, ["~> 5.0.0"])
     s.add_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
     s.add_dependency(%q<rake>.freeze, ["~> 10.4.2"])
     s.add_dependency(%q<rack>.freeze, ["~> 1.6.5"])
