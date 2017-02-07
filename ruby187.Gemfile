@@ -1,8 +1,8 @@
 source "http://rubygems.org"
 
 group :development do
-  gem 'jeweler', '~> 2.3.3'
-  gem 'rspec', '~> 3.5.0'
+  gem 'jeweler', '~> 2.0.1'
+  gem 'rspec', '~> 4.2.0'
   gem "rdoc", "~> 5.0.0"
 
   # Ruby 1.8.7 requires some older gems
