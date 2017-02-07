@@ -31,7 +31,7 @@ The Rails example above would then become:
 
 Implementing such methods manually gets repetitive after a while, so an easier
 way to get these methods automatically is to mixin the ```EasilyTypable```
-module. 
+module.
 
 ## Example:
 
@@ -52,20 +52,29 @@ describe EasilyTypable do
   it "should add type_a? method to TypeA object" do
     expect(TypeA.new.type_a?).to be_truthy
   end
-  it "should add type_b? method to TypeB object" do
-    expect(TypeB.new.type_b?).to be_truthy
-  end
   it "should add type_b? method to TypeA object" do
     expect(TypeA.new.type_b?).to be_falsey
-  end
-  it "should add type_c? method to TypeC object" do
-    expect(TypeC.new.type_c?).to be_truthy
   end
   it "should add type_c? method to TypeA object" do
     expect(TypeA.new.type_c?).to be_falsey
   end
+  it "should add type_a? method to TypeB object" do
+    expect(TypeB.new.type_a?).to be_truthy
+  end
+  it "should add type_b? method to TypeB object" do
+    expect(TypeB.new.type_b?).to be_truthy
+  end
   it "should add type_c? method to TypeB object" do
     expect(TypeB.new.type_c?).to be_falsey
+  end
+  it "should add type_a? method to TypeC object" do
+    expect(TypeC.new.type_a?).to be_truthy
+  end
+  it "should add type_b? method to TypeC object" do
+    expect(TypeC.new.type_b?).to be_truthy
+  end
+  it "should add type_c? method to TypeC object" do
+    expect(TypeC.new.type_c?).to be_truthy
   end
 end
 ```
