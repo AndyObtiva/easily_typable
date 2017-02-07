@@ -1,3 +1,14 @@
+if RUBY_VERSION >= '1.9' && !defined?(Rubinius)
+  begin
+    require 'coveralls'
+    Coveralls.wear!
+    require "codeclimate-test-reporter"
+    CodeClimate::TestReporter.start
+  rescue LoadError, StandardError
+    #no op to support Ruby 1.8.7, ree and Rubinius which do not support Coveralls
+  end
+end
+
 require 'easily_typable'
 
 class TypeA
