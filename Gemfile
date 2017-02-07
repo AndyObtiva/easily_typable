@@ -4,7 +4,7 @@ source "https://rubygems.org"
 # gem "rails"
 
 group :development do
-  gem 'jeweler', '~> 2.0.1'
+  gem 'jeweler', '~> 2.2.1'
   gem "rdoc", "~> 4.2.0"
   gem 'rspec', '~> 3.5.0'
 

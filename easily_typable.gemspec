@@ -19,22 +19,7 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
-    ".coveralls.yml",
-    ".document",
-    ".ruby-gemset",
-    ".ruby-version",
-    ".travis.yml",
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE.txt",
-    "MIT-LICENSE",
-    "README.md",
-    "Rakefile",
-    "VERSION",
-    "lib/easily_typable.rb",
-    "ruby187.Gemfile",
-    "spec/lib/easily_typable_spec.rb",
-    "spec/spec_helper.rb"
+    "lib/easily_typable.rb"
   ]
   s.homepage = "http://github.com/AndyObtiva/easily_typable".freeze
   s.licenses = ["MIT".freeze]
@@ -45,7 +30,7 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.0.1"])
+      s.add_development_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
       s.add_development_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
       s.add_development_dependency(%q<rake>.freeze, ["~> 10.4.2"])
@@ -54,7 +39,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<tins>.freeze, ["~> 1.6.0"])
       s.add_development_dependency(%q<term-ansicolor>.freeze, ["~> 1.3.2"])
     else
-      s.add_dependency(%q<jeweler>.freeze, ["~> 2.0.1"])
+      s.add_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
       s.add_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
       s.add_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
       s.add_dependency(%q<rake>.freeze, ["~> 10.4.2"])
@@ -64,7 +49,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<term-ansicolor>.freeze, ["~> 1.3.2"])
     end
   else
-    s.add_dependency(%q<jeweler>.freeze, ["~> 2.0.1"])
+    s.add_dependency(%q<jeweler>.freeze, ["~> 2.2.1"])
     s.add_dependency(%q<rdoc>.freeze, ["~> 4.2.0"])
     s.add_dependency(%q<rspec>.freeze, ["~> 3.5.0"])
     s.add_dependency(%q<rake>.freeze, ["~> 10.4.2"])
