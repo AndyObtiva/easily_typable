@@ -52,6 +52,9 @@ end
 class TypeC < TypeB
 end
 
+## RSpec of Easily Typable
+require 'spec_helper'
+
 describe EasilyTypable do
   it "should add type_a? method to TypeA object" do
     expect(TypeA.new.type_a?).to be_truthy

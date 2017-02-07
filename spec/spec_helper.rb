@@ -20,4 +20,3 @@ if RUBY_VERSION >= '1.9' && !defined?(Rubinius)
     #no op to support Ruby 1.8.7, ree and Rubinius which do not support Coveralls
   end
 end
-require 'easily_typable'
