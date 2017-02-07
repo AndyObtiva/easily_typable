@@ -1,4 +1,4 @@
-require_relative '../lib/easily_typable'
+require 'easily_typable'
 
 class TypeA
   include EasilyTypable

@@ -2,31 +2,44 @@
 
 ## Introduction:
 
-Often when working with models that belong to an inheritance hierarchy, it is
-useful to verify if a particular model is of a certain type to perform some
-behavior specific to it. For example, this is needed when the view needs to
-handle a special rendering case when encountering a certain type.
+Although polymorphism is a recommended standard in Object-Oriented programming
+for invoking varied behavior in an inheritance hierarchy, sometimes it is still
+useful to verify if a particular model belongs to a certain type when the
+behavior concerned does not belong to the model and is too small to require a
+Design Pattern like Strategy.
 
-The call typically made to accomplish the task is: model.is_a?(CertainType)
+A common example in Rails is checking user roles before rendering certain
+parts of the view:
 
-Often, to do so in a more readable fashion, developers add a more English-like
-method that hides the details of type checking: model.certain_type?
+```erb
+<% if user.is_a?(Admin) %>
+  <%= link_to 'Admin', admin_dashboard_path %>
+<% end %>
+```
 
-Writing such methods gets repetitive after a while, so an easier way to get
-these methods automatically is to mixin the EasilyTypable module.
+To avoid the ```model.is_a?(CertainType)``` syntax, a more readable approach
+that developers resort to is to add an English-like method that hides the
+details of type checking ```model.certain_type?```.
 
-When mixed into classes in an inheritance hierarchy, each class gets
-"certain_type?" methods for its type and all of its subclass types.
+The Rails example above would then become:
+
+```erb
+<% if user.admin? %>
+  <%= link_to 'Admin', admin_dashboard_path %>
+<% end %>
+```
+
+Implementing such methods manually gets repetitive after a while, so an easier
+way to get these methods automatically is to mixin the ```EasilyTypable```
+module. 
 
 ## Example:
 
 ```ruby
-require 'rubygems'
-require 'spec'
-require File.dirname(__FILE__) + '/../lib/easily_typable'
+require 'easily_typable'
 
 class TypeA
-  include Obtiva::EasilyTypable
+  include EasilyTypable
 end
 
 class TypeB < TypeA
@@ -35,24 +48,24 @@ end
 class TypeC < TypeB
 end
 
-describe "Obtiva::EasilyTypable" do
+describe EasilyTypable do
   it "should add type_a? method to TypeA object" do
-    TypeA.new.type_a?.should be_true
+    expect(TypeA.new.type_a?).to be_truthy
   end
   it "should add type_b? method to TypeB object" do
-    TypeB.new.type_b?.should be_true
+    expect(TypeB.new.type_b?).to be_truthy
   end
   it "should add type_b? method to TypeA object" do
-    TypeA.new.type_b?.should be_false
+    expect(TypeA.new.type_b?).to be_falsey
   end
   it "should add type_c? method to TypeC object" do
-    TypeC.new.type_c?.should be_true
+    expect(TypeC.new.type_c?).to be_truthy
   end
   it "should add type_c? method to TypeA object" do
-    TypeA.new.type_c?.should be_false
+    expect(TypeA.new.type_c?).to be_falsey
   end
   it "should add type_c? method to TypeB object" do
-    TypeB.new.type_c?.should be_false
+    expect(TypeB.new.type_c?).to be_falsey
   end
 end
 ```
