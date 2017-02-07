@@ -37,4 +37,4 @@ matrix:
       gemfile: Gemfile
 addons:
   code_climate:
-    repo_token: 
+    repo_token: 589a0a4a0884844eaa001173
