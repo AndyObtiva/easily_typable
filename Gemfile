@@ -18,6 +18,6 @@ group :development do
 end
 
 group :test do
-  gem "coveralls", "~> 0.8.19", :require => false
-  gem "codeclimate-test-reporter", "~> 1.0.5", :require => nil
+  gem "coveralls", "~> 0.8.19"
+  gem "codeclimate-test-reporter", "~> 1.0.5"
 end
