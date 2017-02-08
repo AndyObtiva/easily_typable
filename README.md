@@ -1,4 +1,4 @@
-# Easily Typable v1.0.0
+# Easily Typable v1.0.1
 [![Gem Version](https://badge.fury.io/rb/easily_typable.svg)](http://badge.fury.io/rb/easily_typable)
 [![Build Status](https://api.travis-ci.org/AndyObtiva/easily_typable.svg?branch=master)](https://travis-ci.org/AndyObtiva/easily_typable)
 [![Coverage Status](https://coveralls.io/repos/AndyObtiva/easily_typable/badge.svg?branch=master)](https://coveralls.io/r/AndyObtiva/easily_typable?branch=master)
