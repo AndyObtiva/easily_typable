@@ -86,6 +86,11 @@ describe EasilyTypable do
 end
 ```
 
+## Release Notes
+
+ * v1.0.1: Rails model lazy loading now loads EasilyTypable methods automagically
+ * v1.0.0: Initial Easily Typable implementation for Ruby
+ 
 ## Contributing to Easily Typable
 
  * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
