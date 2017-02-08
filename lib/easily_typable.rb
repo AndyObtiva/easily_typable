@@ -13,6 +13,24 @@ module EasilyTypable
     end_eval
   end
 
+  # NOTE: Rails Specific Feature
+  # Retroactively load Rails model class matching missing method name to add to
+  # EasilyTypable hierarchy when it fails on first attempt.
+  # This shall result in it working on second attempt if model class exists.
+  # Example:
+  alias method_missing_without_easily_typable method_missing
+  def method_missing(name, *args, &block)
+    if name.to_s.end_with?('?') && !@easily_typable_class_load_attempted
+      # attempt to load Rails class and re-invoke once
+      class_name = name.to_s.sub(/\?$/, '').split('_').map(&:capitalize).join
+      Object.const_get(class_name) rescue nil
+      @easily_typable_class_load_attempted = true
+      send(name, *args, &block)
+    else
+      method_missing_without_easily_typable(name, *args, &block)
+    end
+  end
+
   module SubClassMethods
     def self.included(subclass_constant)
       super
@@ -41,5 +59,5 @@ module EasilyTypable
     gsub(/([a-z])([A-Z])/,'\1_\2').
     downcase
   end
-  
+
 end
