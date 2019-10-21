@@ -15,7 +15,7 @@ group :development do
   # Ruby 1.9.3 requires some older gems
   gem "rake", "~> 10.4.2"
   gem "rack", "~> 1.6.5"
-  gem "nokogiri", "~> 1.6.8.1"
+  gem "nokogiri", "~> 1.10.4"
   # gem "tins", "~> 1.5.0"
   gem "term-ansicolor", "~> 1.3.2"
 end

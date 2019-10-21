@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<codeclimate-test-reporter>, ["~> 1.0.5"])
       s.add_development_dependency(%q<rake>, ["~> 10.4.2"])
       s.add_development_dependency(%q<rack>, ["~> 1.6.5"])
-      s.add_development_dependency(%q<nokogiri>, ["~> 1.6.8.1"])
+      s.add_development_dependency(%q<nokogiri>, "~> 1.10.4")
       s.add_development_dependency(%q<term-ansicolor>, ["~> 1.3.2"])
     else
       s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<codeclimate-test-reporter>, ["~> 1.0.5"])
       s.add_dependency(%q<rake>, ["~> 10.4.2"])
       s.add_dependency(%q<rack>, ["~> 1.6.5"])
-      s.add_dependency(%q<nokogiri>, ["~> 1.6.8.1"])
+      s.add_dependency(%q<nokogiri>, "~> 1.10.4")
       s.add_dependency(%q<term-ansicolor>, ["~> 1.3.2"])
     end
   else
@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<codeclimate-test-reporter>, ["~> 1.0.5"])
     s.add_dependency(%q<rake>, ["~> 10.4.2"])
     s.add_dependency(%q<rack>, ["~> 1.6.5"])
-    s.add_dependency(%q<nokogiri>, ["~> 1.6.8.1"])
+    s.add_dependency(%q<nokogiri>, "~> 1.10.4")
     s.add_dependency(%q<term-ansicolor>, ["~> 1.3.2"])
   end
 end
