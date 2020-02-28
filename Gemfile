@@ -13,7 +13,7 @@ group :development do
 
 
   # Ruby 1.9.3 requires some older gems
-  gem "rake", "~> 10.4.2"
+  gem "rake", "~> 12.3.3"
   gem "rack", "~> 1.6.5"
   gem "nokogiri", "~> 1.6.8.1"
   # gem "tins", "~> 1.5.0"
