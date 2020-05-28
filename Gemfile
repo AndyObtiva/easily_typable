@@ -14,7 +14,7 @@ group :development do
   # gem "rake", "~> 10.4.2"
   gem 'rake', '~> 13.0.1'
   gem 'rack', '~> 1.6.5'
-  gem 'nokogiri', '~> 1.6.8.1'
+  gem 'nokogiri', '~> 1.10.8'
   # gem 'tins', '~> 1.5.0'
   gem 'term-ansicolor', '~> 1.3.2'
 end
