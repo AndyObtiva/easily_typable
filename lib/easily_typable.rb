@@ -55,7 +55,7 @@ module EasilyTypable
   protected
   #added this method to break reliance on ActiveSupport and Facets
   def self.__methodize__(text)
-    text.gsub(/([A-Z]+)([A-Z])/,'\1_\2').
+    text.split(/::/).last.gsub(/([A-Z]+)([A-Z])/,'\1_\2').
     gsub(/([a-z])([A-Z])/,'\1_\2').
     downcase
   end
