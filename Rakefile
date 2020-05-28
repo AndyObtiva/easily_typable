@@ -1,4 +1,29 @@
 # encoding: utf-8
+if RUBY_VERSION >= '1.9' && !defined?(Rubinius) && (ARGV.empty? || ARGV.first == 'spec' || ARGV.first == 'simplecov')
+  begin    
+    ENV['APP_ENV'] = 'test'
+    ENV['CODECLIMATE_REPO_TOKEN'] = 'eae8b682ab562169f9e44d714d701d9a73566e95450f96c05008cf37a4e19a46'
+    require "codeclimate-test-reporter"
+    require "simplecov"
+    module SimpleCov::Configuration
+      def clean_filters
+        @filters = []
+      end
+    end
+    SimpleCov.configure do
+      clean_filters
+      load_adapter 'test_frameworks'
+    end
+    SimpleCov.start
+#     require 'coveralls'
+#     Coveralls.wear!
+  rescue LoadError, StandardError => e
+    #no op to support Ruby 1.8.7, ree and Rubinius which do not support Coveralls
+    puts 'Error loading Coveralls, SimpleCov, or CodeClimate'
+    puts e.message
+    puts e.backtrace.join("\n")
+  end
+end
 
 require 'rubygems'
 require 'bundler'
@@ -25,13 +50,6 @@ Jeweler::Tasks.new do |gem|
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
 
 desc "Code coverage detail"
 task :simplecov do

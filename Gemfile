@@ -14,3 +14,5 @@ group :development do
   gem 'rack', '~> 1.6.5'
   gem 'term-ansicolor', '~> 1.3.2'
 end
+
+gem 'simplecov', require: false, group: :test

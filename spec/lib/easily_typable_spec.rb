@@ -1,4 +1,4 @@
-require 'easily_typable'
+require 'spec_helper'
 
 class TypeA
   include EasilyTypable
@@ -9,9 +9,6 @@ end
 
 class TypeC < TypeB
 end
-
-## RSpec of Easily Typable
-require 'spec_helper'
 
 describe EasilyTypable do
   it "adds type_a? method to TypeA object" do
