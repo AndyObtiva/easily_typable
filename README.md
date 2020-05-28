@@ -1,4 +1,4 @@
-# Easily Typable v1.0.2
+# EasilyTypable v1.0.2
 [![Gem Version](https://badge.fury.io/rb/easily_typable.svg)](http://badge.fury.io/rb/easily_typable)
 [![Build Status](https://api.travis-ci.org/AndyObtiva/easily_typable.svg?branch=master)](https://travis-ci.org/AndyObtiva/easily_typable)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/61a688078896badc104f/test_coverage)](https://codeclimate.com/github/AndyObtiva/easily_typable/test_coverage)
@@ -82,9 +82,9 @@ puts Van.new.van? # prints true
 
  * v1.0.2: Support namespaced subclasses
  * v1.0.1: Rails model lazy loading now loads EasilyTypable methods automagically
- * v1.0.0: Initial Easily Typable implementation for Ruby
+ * v1.0.0: Initial EasilyTypable implementation for Ruby
  
-## Contributing to Easily Typable
+## Contributing to EasilyTypable
 
  * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
  * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
