@@ -35,8 +35,6 @@ matrix:
 addons:
   code_climate:
     repo_token: eae8b682ab562169f9e44d714d701d9a73566e95450f96c05008cf37a4e19a46
-#after_success:
-#  - bundle exec codeclimate-test-reporter
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
