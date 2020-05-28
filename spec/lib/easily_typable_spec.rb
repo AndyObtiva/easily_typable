@@ -11,6 +11,7 @@ class TypeC < TypeB
 end
 
 class TypeB < TypeA
+  # TypeB::TypeD is a namespaced subclass
   class TypeD < TypeB
   end
 end

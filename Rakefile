@@ -16,8 +16,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "easily_typable"
   gem.homepage = "http://github.com/AndyObtiva/easily_typable"
   gem.license = "MIT"
-  gem.summary = %Q{Easier type checking via auto-generated certain_type? methods}
-  gem.description = %Q{Although polymorphism is a recommended standard in Object-Oriented programming for invoking varied behavior in an inheritance hierarchy, sometimes it is still useful to verify if a particular model belongs to a certain type when the behavior concerned does not belong to the model and is too small to require a Design Pattern like Strategy. To avoid the model.is_a?(CertainType) syntax, a more readable approach that developers resort to is to add an English-like method that hides the details of type checking model.certain_type?. Implementing such methods manually gets repetitive after a while, so an easier way to get these methods automatically is to mixin the EasilyTypable module.}
+  gem.summary = %Q{Ruby mixin that facilitates English-like type checking in an inheritance hierarchy via "type_name?" methods}
+  gem.description = %Q{Ruby mixin that facilitates English-like type checking in an inheritance hierarchy via "type_name?" methods}
   gem.email = "andy.am@gmail.com"
   gem.authors = ["AndyObtiva"]
   gem.files = Dir['lib/*.rb']

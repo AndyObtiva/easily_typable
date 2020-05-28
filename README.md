@@ -1,7 +1,7 @@
-# Easily Typable v1.0.1
+# Easily Typable v1.0.2
 [![Gem Version](https://badge.fury.io/rb/easily_typable.svg)](http://badge.fury.io/rb/easily_typable)
 [![Build Status](https://api.travis-ci.org/AndyObtiva/easily_typable.svg?branch=master)](https://travis-ci.org/AndyObtiva/easily_typable)
-[![Coverage Status](https://coveralls.io/repos/AndyObtiva/easily_typable/badge.svg?branch=master)](https://coveralls.io/r/AndyObtiva/easily_typable?branch=master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/61a688078896badc104f/test_coverage)](https://codeclimate.com/github/AndyObtiva/easily_typable/test_coverage)
 [![Code Climate](https://codeclimate.com/github/AndyObtiva/easily_typable.svg)](https://codeclimate.com/github/AndyObtiva/easily_typable)
 
 ## Introduction:
@@ -19,11 +19,14 @@ parts of the view:
 <% if user.is_a?(Admin) %>
   <%= link_to 'Admin', admin_dashboard_path %>
 <% end %>
+<% if user.is_a?(Customer) %>
+  <%= link_to 'Customer Profile', customer_profile_path %>
+<% end %>
 ```
 
-To avoid the ```model.is_a?(CertainType)``` syntax, a more readable approach
-that developers resort to is to add an English-like method that hides the
-details of type checking ```model.certain_type?```.
+To avoid the `model.is_a?(Admin)` syntax, a more readable approach
+that developers resort to is to add an English-like DSL method that hides the
+details of Object-Oriented type checking: `model.admin?`.
 
 The Rails example above would then become:
 
@@ -31,63 +34,53 @@ The Rails example above would then become:
 <% if user.admin? %>
   <%= link_to 'Admin', admin_dashboard_path %>
 <% end %>
+<% if user.customer? %>
+  <%= link_to 'Customer Profile', customer_profile_path %>
+<% end %>
 ```
 
-Implementing such methods manually gets repetitive after a while, so an easier
+Implementing such methods manually gets repetitive and error-prone, so an easier
 way to get these methods automatically is to mixin the ```EasilyTypable```
 module.
 
 ## Example:
 
 ```ruby
-require 'easily_typable'
+require 'easily_typable' # in IRB at cloned project directory, call this instead: require './lib/easily_typable' 
 
-class TypeA
+class Vehicle
   include EasilyTypable
 end
 
-class TypeB < TypeA
+class Car < Vehicle
 end
 
-class TypeC < TypeB
+class Truck < Vehicle
 end
 
-## RSpec of Easily Typable
-require 'spec_helper'
-
-describe EasilyTypable do
-  it "adds type_a? method to TypeA object" do
-    expect(TypeA.new.type_a?).to be_truthy
-  end
-  it "adds type_b? method to TypeA object" do
-    expect(TypeA.new.type_b?).to be_falsey
-  end
-  it "adds type_c? method to TypeA object" do
-    expect(TypeA.new.type_c?).to be_falsey
-  end
-  it "adds type_a? method to TypeB object" do
-    expect(TypeB.new.type_a?).to be_truthy
-  end
-  it "adds type_b? method to TypeB object" do
-    expect(TypeB.new.type_b?).to be_truthy
-  end
-  it "adds type_c? method to TypeB object" do
-    expect(TypeB.new.type_c?).to be_falsey
-  end
-  it "adds type_a? method to TypeC object" do
-    expect(TypeC.new.type_a?).to be_truthy
-  end
-  it "adds type_b? method to TypeC object" do
-    expect(TypeC.new.type_b?).to be_truthy
-  end
-  it "adds type_c? method to TypeC object" do
-    expect(TypeC.new.type_c?).to be_truthy
-  end
+class Van < Vehicle
 end
+
+
+puts Car.new.vehicle? # prints true
+puts Car.new.car? # prints true
+puts Car.new.truck? # prints false
+puts Car.new.van? # prints false
+
+puts Truck.new.vehicle? # prints true
+puts Truck.new.car? # prints false
+puts Truck.new.truck? # prints true
+puts Truck.new.van? # prints false
+
+puts Van.new.vehicle? # prints true
+puts Van.new.car? # prints false
+puts Van.new.truck? # prints false
+puts Van.new.van? # prints true
 ```
 
 ## Release Notes
 
+ * v1.0.2: Support namespaced subclasses
  * v1.0.1: Rails model lazy loading now loads EasilyTypable methods automagically
  * v1.0.0: Initial Easily Typable implementation for Ruby
  
@@ -103,6 +96,5 @@ end
 
 ## Copyright
 
- * Copyright (c) 2012 - 2017 Andy Maleh
- * Copyright (c) 2009 - 2011 Andy Maleh - Obtiva Corp.
+ * Copyright (c) 2009-2020 Andy Maleh
  * See LICENSE.txt for further details.
