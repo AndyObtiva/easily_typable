@@ -14,11 +14,6 @@ if RUBY_VERSION >= '1.9' && !defined?(Rubinius)
     require "codeclimate-test-reporter"
     require "simplecov"
     require 'coveralls'
-    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-      CodeClimate::TestReporter::Formatter,
-      Coveralls::SimpleCov::Formatter
-    ]
-    SimpleCov.start
     Coveralls.wear!
   rescue LoadError, StandardError => e
     #no op to support Ruby 1.8.7, ree and Rubinius which do not support Coveralls
