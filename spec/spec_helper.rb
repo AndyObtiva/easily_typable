@@ -10,6 +10,8 @@ end
 if RUBY_VERSION >= '1.9' && !defined?(Rubinius)
   begin    
     ENV['APP_ENV'] = 'test'
+    ENV['CODECLIMATE_REPO_TOKEN'] = 'eae8b682ab562169f9e44d714d701d9a73566e95450f96c05008cf37a4e19a46'
+    require "codeclimate-test-reporter"
     require "simplecov"
     module SimpleCov::Configuration
       def clean_filters
@@ -23,7 +25,7 @@ if RUBY_VERSION >= '1.9' && !defined?(Rubinius)
     SimpleCov.start
   rescue LoadError, StandardError => e
     # no op to support older Rubies
-    puts 'Not loading SimpleCov'
+    puts 'Not loading SimpleCov / CodeClimate'
   end
 end
 require 'easily_typable'
