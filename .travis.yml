@@ -7,31 +7,6 @@ rvm:
   - 2.6.6
   - 2.5.8
   - 2.4.10
-  - 2.3.8
-  - 2.2.10
-  - 2.1.5
-  - 2.0.0
-gemfile:
-  - Gemfile
-  - ruby187.Gemfile
-matrix:
-  exclude:
-    - rvm: 2.7.1
-      gemfile: ruby187.Gemfile
-    - rvm: 2.6.6
-      gemfile: ruby187.Gemfile
-    - rvm: 2.5.8
-      gemfile: ruby187.Gemfile
-    - rvm: 2.4.10
-      gemfile: ruby187.Gemfile
-    - rvm: 2.3.8
-      gemfile: Gemfile
-    - rvm: 2.2.10
-      gemfile: Gemfile
-    - rvm: 2.1.5
-      gemfile: Gemfile
-    - rvm: 2.0.0
-      gemfile: Gemfile
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -40,3 +15,4 @@ script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ruby -e "$(curl -s https://undercover-ci.com/uploader.rb)" -- --repo AndyObtiva/easily_typable --commit $TRAVIS_COMMIT --lcov coverage/lcov/easily_typable.lcov
