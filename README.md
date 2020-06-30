@@ -1,7 +1,7 @@
 # EasilyTypable v1.0.2
 [![Gem Version](https://badge.fury.io/rb/easily_typable.svg)](http://badge.fury.io/rb/easily_typable)
 [![Build Status](https://api.travis-ci.org/AndyObtiva/easily_typable.svg?branch=master)](https://travis-ci.org/AndyObtiva/easily_typable)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/61a688078896badc104f/test_coverage)](https://codeclimate.com/github/AndyObtiva/easily_typable/test_coverage)
+[![Coverage Status](https://coveralls.io/repos/github/AndyObtiva/easily_typable/badge.svg?branch=master)](https://coveralls.io/github/AndyObtiva/easily_typable?branch=master)
 [![Code Climate](https://codeclimate.com/github/AndyObtiva/easily_typable.svg)](https://codeclimate.com/github/AndyObtiva/easily_typable)
 
 ## Introduction:
